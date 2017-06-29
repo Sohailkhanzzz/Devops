@@ -1,0 +1,165 @@
+1.What is git?
+
+---> Git is a distributed version control system which
+allows groups of people to work on the same documents (often code) at the same time, and without stepping on each other's toes. and git was developed in 2005 by Linus Torvalds.
+
+2.Which is better Subversion(SVN) or GIT? why?
+
+---> Git is much faster than Subversion because SVN allows you to check out just a subtree of a repository where as Git requires you to clone the entire repository (including history) and create a working copy that mirrors at least a subset of the items under version control.
+
+---> Git's repositories are much smaller than Subversions, Git provides better auditing of branch and merge events.
+
+3.How do you clone a remote repository?
+---> When you create a repository on GitHub or bitbucket, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. then follows the instructions.
+
+1.On GitHub, navigate to the main page of the repository.
+
+2.Under the repository name, click Clone or download.
+
+3.In the Clone with HTTPs section, click  to copy the clone URL for the repository.
+
+4. open the termial in linux or GiTbash in windows
+
+5. Change the current working directory to the location where you want the cloned directory to be made.
+
+6. Type git clone, and then paste the URL you copied.
+
+7. Press Enter your local clone will be created.
+
+4.What is the difference between SSH and HTTP URL in git clone?
+
+---> In Https clone URLs are available on all repositories, public and private. These URLs work everywhere--even if you are behind a firewall or proxy. In certain cases, if you'd rather use SSH, you might be able to use SSH over the HTTPS port.
+
+---> If you have enabled two-factor authentication, or if you are accessing an organization that uses SAML single sign-on, you must provide a personal access token instead of entering your password for HTTPS Git.
+
+---> SSH URLs provide access to a Git repository via SSH, a secure protocol. To use these URLs, you must generate an SSH keypair on your computer and add the public key to your GitHub account. For information on setting up an SSH keypair, see "Generating an SSH key." 
+
+---> If you are accessing an organization that uses SAML single sign-on, you won't be able to clone with SSH. Instead, clone with the HTTPS URL.
+
+
+5.What must be done before you can clone using SSH protocol?
+
+---> we have to generate SSH key from your local computer then we have to pair the keys with your remote repository.
+
+6.What is the Difference between staging and commit?
+
+---> Commit: To store our staged changes we run the commit command with a message describing what we've changed.Basically git commit "records changes to the repository" while git push "updates remote refs along with associated objects". So the first one is used in connection with your local repository, while the latter one is used to interact with a remote repository .
+
+---> Staging -Staging is a step before the commit process in git. That is, a commit in git is performed in two
+steps: staging and actual commit. As long as a changeset is in the staging area, git allows you to edit it as you like
+
+(replace stagedfiles with other versions of staged files, remove changes from staging, etc.).
+
+7.When do you create a branch in git?
+
+---> Ans- Nearly every VCS has some form of branching support. Branching means you diverge from the main line of development and
+continue to do work without messing with that main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of your source code directory, which can take a long time for large projects.Some people refer to Git’s branching model as its “killer feature,” and it certainly sets Git apart in the VCS community. Why is it so
+special? The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages workflows that branch and merge often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can entirely change the way that you develop.
+
+8.What are git hooks?
+
+--->  Git hooks are scripts that Git executes before or after events such as: commit, push, and receive. Git hooks are a
+built-in feature - no need to download anything. Git hooks are run locally. These hook scripts are only limited by a
+developer's imagination.
+
+9s Please explain.
+
+---> Branching
+
+10.List 25 most used commands in Linux, and explain what it does
+
+---> 1. tar command examples : $ tar cvf archive_name.tar dirname/ create a new tar archive
+
+2. View an existing tar archive: $ tar tvf archive_name.tar
+
+3. Search for a given string in a file (case in-sensitive search) :$ grep -i "the" demo_file
+
+4. Print the matched line, along with the 3 lines after it : $ grep -A 3 -i "example" demo_text
+
+5.Search for a given string in all files recursively :$ grep -r "sohail" *
+
+6. Find files using file-name ( case in-sensitve find) : # find -iname "MyCProgram.c"
+
+7.Find all empty files in home directory : # find ~ -empty
+
+8. Login to remote host : ssh -l jsmith remotehost.example.com
+
+9.Debug ssh client : ssh -v -l jsmith remotehost.example.com
+
+10. Display ssh client version :$ ssh -V : OpenSSH_3.9p1, OpenSSL 0.9.7a Feb 19 2003
+
+11. Go to the 143rd line of file :$ vim +143 filename.txt
+
+12. Open the file in read only mode :$ vim -R /etc/passwd
+
+13.Ignore white space while comparing.
+
+# diff -w name_list.txt name_list_new.txt
+
+2c2,3
+< John Doe --- > John M Doe
+> Jason Bourne
+
+14. Sort a file in ascending order: $ sort names.txt
+
+15. Sort a file in descending order: $ sort -r names.txt
+
+16. To export an environment variable:$ export ORACLE_HOME=/u01/app/oracle/product/10.2.0
+
+17.Display filesize in human readable format (e.g. KB, MB etc.,): $ ls -lh
+
+18. Order Files Based on Last Modified Time (In Reverse Order) Using ls -ltr :$ ls -ltr
+
+19. Visual Classification of Files With Special Characters Using ls -F : $ ls -F
+
+20. Check the status of a service:
+# service ssh status
+
+21.Check the status of all the services.
+
+service --status-all
+
+22.Restart a service.
+
+# service ssh restart
+
+23.Get confirmation before removing the file.
+
+$ rm -i filename.txt
+
+24.Print the filename and get confirmation before removing the file.
+
+$ rm -i file*
+
+25.Following example creates a directory called temp under your home directory.
+
+$ mkdir ~/temp
+
+11.How do u search and replace in vi?
+
+---> vi also has powerful search and replace capabilities. To search the text of an open file for a specific string (combination of characters or words), in the command mode type a colon (:), "s," forward slash (/) and the search string itself. What you type will appear on the bottom line of the display screen. Finally, press ENTER, and the matching area of the text will be highlighted, if it exists. If the matching string is on an area of text that is not currently displayed on the screen, the text will scroll to show that area.
+
+The formal syntax for searching is:
+
+:s/string
+
+example : :s/khan
+
+here we search for khan in the text then the first match for khan will be highlighted.
+
+The syntax for replacing one string with another string in the current line is
+
+:s/pattern/replace/
+
+Here "pattern" represents the old string and "replace" represents the new string. For example, to replace each occurrence of the word "syed" in a line with "akshat," type:
+
+:s/syed/akshat/
+
+The syntax for replacing every occurrence of a string in the entire text is similar. The only difference is the addition of a "%" in front of the "s":
+
+:%s/pattern/replace/
+
+Thus repeating the previous example for the entire text instead of just for a single line would be:
+
+:%s/syed/akshat/
+
